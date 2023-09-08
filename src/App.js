@@ -1,7 +1,12 @@
 import React from 'react';
+import Layout from './Layout/Layout';
+
 
 const App = () => {
-  return <div className='overflow-hidden'>react app</div>;
+
+  return <div className='overflow-hidden'>
+    <Layout/>
+  </div>;
 };
 
 export default App;
