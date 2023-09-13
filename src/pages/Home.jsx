@@ -6,6 +6,8 @@ const Home = () => {
   //get products from product context
   const { products } = useContext(ProductContext);
 
+  
+
   //get only 'mens' products
   const filterProducts = products.filter((item) => {
     return (
