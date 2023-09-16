@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {IoMdClose} from 'react-icons/io'
 
 const CartItem = ({item}) => {
   const {id, title,image,price,amount}=item;
@@ -9,8 +10,18 @@ const CartItem = ({item}) => {
         <Link to={`/products/${id}`}>
         <img className='max-w-[80px]' src={image} alt="" />
         </Link>
-        <div></div>
+      
       </div>
+      <div className='w-full flex flex-col'>
+      <div className='flex justify-between mb-2'>
+        <Link to={`/products/${id}`} className='text-sm uppercase font-medium max-w-[240px] text-primary hover:underline'>
+          {title}
+          </Link>
+          <div className='text-xl cursor-pointer'>
+          <IoMdClose className='text-gray-500 hover:text-red-500 transition'/>
+          </div>
+        </div>
+        </div>
     </div>
 
   </div>);
