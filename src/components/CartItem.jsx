@@ -5,7 +5,7 @@ import{CartContext} from '../contexts/CartContext'
 
 const CartItem = ({ item }) => {
 
-  const {removeFromCart,increaseAmount}=useContext(CartContext);
+  const {removeFromCart,increaseAmount,decreaseAmount}=useContext(CartContext);
 
 
   const { id, title, image, price, amount } = item;
@@ -31,7 +31,7 @@ const CartItem = ({ item }) => {
           </div>
           <div className="flex gap-s-2 h-[36px] text-sm ">
             <div className="flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium">
-              <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
+              <div onClick={()=> decreaseAmount(id)} className="flex-1 h-full flex justify-center items-center cursor-pointer">
                 <IoMdRemove />
               </div>
               <div className="h-full flex justify-center items-center px-2">
