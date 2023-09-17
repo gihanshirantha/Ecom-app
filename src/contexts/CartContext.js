@@ -35,7 +35,15 @@ const removeFromCart=(id)=>{
   setCart(newCart);
 
 }
-  return <CartContext.Provider value={{cart,addToCart,removeFromCart}}>{children}</CartContext.Provider>;
+
+//clear cart
+const clearCart=()=>{
+  setCart([]);
+}
+
+
+
+  return <CartContext.Provider value={{cart,addToCart,removeFromCart,clearCart}}>{children}</CartContext.Provider>;
 };
 
 export default CartProvider;
