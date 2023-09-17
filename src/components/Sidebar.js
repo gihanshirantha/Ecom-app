@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsForwardFill } from "react-icons/bs";
 import { BsFillTrash3Fill } from "react-icons/bs";
-import {FiTrash2} from 'react-icons/fi'
+import { FiTrash2 } from "react-icons/fi";
 
 import CartItem from "./CartItem";
 import { SidebarContext } from "../contexts/SidebarContext";
@@ -10,9 +10,8 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 
 const Sidebar = () => {
-  
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const  {cart,clearCart,total} =useContext(CartContext)
+  const { cart, clearCart, total } = useContext(CartContext);
   return (
     <div
       className={`${
@@ -26,17 +25,22 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
-        {cart.map((item)=>{
-        return <CartItem item={item} key={item.id} />
-      })}</div>
+        {cart.map((item) => {
+          return <CartItem item={item} key={item.id} />;
+        })}
+      </div>
       <div className=" flex flex-col gap-y-3 py-4 mt-4">
         <div className=" flex w-full justify-between items-center">
           <div className="uppercase font-semibold">
-            <span className=" mr-2">Total :</span>$ {parseFloat(total).toFixed(2)}
+            <span className=" mr-2">Total :</span>${" "}
+            {parseFloat(total).toFixed(2)}
           </div>
-          
-          <div onClick={clearCart} className="cursor-pointer border rounded-lg py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl hover:bg-red-600 transition">
-            <FiTrash2/>
+
+          <div
+            onClick={clearCart}
+            className="cursor-pointer border rounded-lg py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl hover:bg-red-600 transition"
+          >
+            <FiTrash2 />
           </div>
         </div>
       </div>
@@ -45,4 +49,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
- 
