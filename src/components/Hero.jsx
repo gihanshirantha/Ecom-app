@@ -1,5 +1,5 @@
 import React from 'react';
-import WomanImg from '../img/woman_hero.png'
+import WomanImg from '../img/woman_hero1.png'
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -11,14 +11,14 @@ const Hero = () => {
             <div className='w-10 h-[2px] bg-red-500 mr-3'></div>
             <div>New trend</div>
           </div>
-          <h1 className='text-[70px] leading-[1.1] font-light mb-4'>AUTUMN SALE STYLISH<br/>
-          <span className='font-semibold'>WOMENS</span>
+          <h1 className='text-[90px] leading-[1.1] font-light mb-4'>AUTUMN SALE<br/> STYLISH<br/>
+          <span className='font-semibold text-[#00ADB5]'>WOMENS</span>
           </h1>
           <Link to={'/'} className='self-start uppercase font-semibold border-b-2 border-primary'>
           Discover more
           </Link>
         </div>
-        <div className='hidden lg:block'>
+        <div className='hidden lg:block w-[705px]'>
           <img src={WomanImg} alt="" />
         </div>
       </div>
