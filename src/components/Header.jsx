@@ -3,6 +3,7 @@ import { SidebarContext } from '../contexts/SidebarContext';
 import {BsBag} from 'react-icons/bs'
 import { CartContext } from '../contexts/CartContext';
 import Logo from '../img/logo.svg'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isActive,setIsActive]=useState(true);
@@ -20,7 +21,9 @@ useEffect(()=>{
     <header className={`${isActive?'bg-white py-4 shadow-md':'bg-none py-6 '} fixed w-full z-10 transition-all`}>  
       <div className='flex container mx-auto items-center justify-between h-full'>
     <div>
-      <img src={Logo} alt="" className='w-[40px]' />
+      <Link to={'/home'}>
+      <img src={Logo} alt="" className='w-[40px]'/>
+      </Link>
     </div>
     <div onClick={()=>setIsOpen(!isOpen)} className='cursor-pointer flrx relative max-w-[50px]'>
       <BsBag className='text-2xl'/>
